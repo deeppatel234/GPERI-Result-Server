@@ -1,0 +1,62 @@
+
+<div class="panel-group" id="results">
+    {{#each data}}
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#results" href="#{{this.enrollemnt}}">
+        {{this.enrollemnt}} |  {{this.sem}} | {{this.branch}} | {{this.name}}  <!-- | SPI : {{this.spi}} | CPI : {{this.cpi}} | CGAP : {{this.cgpa}} --></a>
+      </h4>
+    </div>
+    <div id="{{this.enrollemnt}}" class="panel-collapse collapse">
+      <div class="panel-body">
+			<table class="table">
+			  <thead class="thead-inverse">
+			    <tr>
+			      <th>SUBJECT CODE</th>
+			      <th>SUBJECT NAME</th>
+			      <th>Theory Grade <br/>ESE | PA | TOTAL</th>
+			      <th>Practical Grade <br/>ESE | PA | TOTAL</th>
+			      <th>Subject Grade</th>
+			    </tr>
+			  </thead>
+			  <tbody>
+			    {{#each this.subject}}
+				    <tr>
+				      <th scope="row">{{this.code}}</th>
+				      <td>{{this.name}}</td>
+				      <td>{{this.theoryese}} | {{this.theorypa}} | {{this.theorytotal}}</td>
+				      <td>{{this.practicalese}} | {{this.practicalpa}} | {{this.practicaltotal}}</td>
+				      <td>{{this.subjectgrade}}</td>
+				    </tr>
+			    {{/each}}
+			  </tbody>
+		</table>
+      </div>
+      
+      	{{#if this.currentsemblock}}
+    		<div class="alert alert-danger">
+  		{{else}}
+    		<div class="alert alert-success">
+  		{{/if}}
+      		<table class="table">
+			    <tr>
+			      <th>Current Sem. Backlog: {{this.currentsemblock}}</th>
+			      <th>Total Backlog: {{this.totalblock}}</th>
+			      <th>SPI: {{this.spi}}</th>
+			      <th>CPI: {{this.cpi}}</th>
+			      <th>CGPA: {{this.cgpa}}</th>
+			    </tr>
+			</table>
+		</div>
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+
+
+      
+      
+      
+
