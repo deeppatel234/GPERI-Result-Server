@@ -6,7 +6,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var moment = require('moment');
 
-mongoose.connect('mongodb://gperi:12345678@localhost/collage');
+mongoose.connect('mongodb://deep:deep123@ds161551.mlab.com:61551/result');
 var db = mongoose.connection;
 db.on('connected', function() {
     console.log('Mongo DB connection open for DB');
@@ -40,7 +40,7 @@ var ResultSchema = new Schema({
     }]
 });
 
-var Result = mongoose.model('Result', ResultSchema);
+var Result = mongoose.model('results', ResultSchema);
 
 /* GET home page. */
 /*router.get('/', function(req, res, next) {
