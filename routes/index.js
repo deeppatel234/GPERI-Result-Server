@@ -55,6 +55,13 @@ router.post('/', function(req, res) {
     try {
         var data = req.body;
 
+        if(data["username"] != "deep" || data["password"] != "deep@1996"){
+            console.log("data[\"password\"]", data["password"]);
+            console.log("data[\"username\"]", data["username"]);
+            res.send('Authentication Error');
+            return;
+        }
+
         var newData = {};
 
         for (var key in data) {
