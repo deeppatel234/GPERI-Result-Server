@@ -6,7 +6,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var moment = require('moment');
 
-mongoose.connect('mongodb://deep:deep123@ds161551.mlab.com:61551/result');
+mongoose.connect('');
 var db = mongoose.connection;
 db.on('connected', function() {
     console.log('Mongo DB connection open for DB');
