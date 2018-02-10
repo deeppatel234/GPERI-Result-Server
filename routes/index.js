@@ -82,27 +82,10 @@ router.post('/', function(req, res) {
         temp["currentsemblock"] = newData["Current Sem. Backlog"];
         temp["name"] = newData["name"].toUpperCase();
         temp["examnumber"] = newData["examnumber"];
-        temp["subject"] = [];
+        temp["subject"] = newData["subject"];
 
         if (temp["spi"].indexOf('-') != -1) {
             temp["spi"] = 0.00;
-        }
-
-        for (var key in newData) {
-            var val = newData[key];
-            if (typeof val == "object") {
-                temp["subject"].push({
-                    code: key,
-                    name: val[0],
-                    theoryese: val[1],
-                    theorypa: val[2],
-                    theorytotal: val[3],
-                    practicalese: val[4],
-                    practicalpa: val[5],
-                    practicaltotal: val[6],
-                    subjectgrade: val[7]
-                });
-            }
         }
 
         var studentMonth = moment().month("AUG").format("MM");
