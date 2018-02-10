@@ -82,7 +82,7 @@ router.post('/', function(req, res) {
         temp["currentsemblock"] = newData["Current Sem. Backlog"];
         temp["name"] = newData["name"].toUpperCase();
         temp["examnumber"] = newData["examnumber"];
-        temp["subject"] = newData["subject"];
+        temp["subject"] = data["subject"];
 
         if (temp["spi"].indexOf('-') != -1) {
             temp["spi"] = 0.00;
